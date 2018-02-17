@@ -58,11 +58,10 @@ nav a {
   grid-template-columns: 99vw;
   grid-template-rows: 57.5581395349vw;
   justify-items: center;
-  align-items: start; }
+  align-items: center; }
   .vimeoMovieContainer .vimeoMovie {
-    margin-top: 80px;
-    width: 80vw;
-    height: 46.511627907vw; }
+    width: 70vw;
+    height: 40.6976744186vw; }
 
 .cover {
   height: auto;

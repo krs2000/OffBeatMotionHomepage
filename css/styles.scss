@@ -66,16 +66,16 @@ nav {
 
 .vimeoMovieContainer{
 	$v:99vw;
-	$vv:80vw;
+	$vv:70vw;
 	width:100%;
 	height:auto;
 	display:grid;
 	grid-template-columns: $v;
 	grid-template-rows: $v/1.72;
 	justify-items:center;
-	 align-items: start;
+	 align-items: center;
 	.vimeoMovie{
-		margin-top: 80px;
+		// margin-top: 80px;
 		width: $vv;
 		height: $vv/1.72;
 		// grid-template-rows: 99wv/1.72;	

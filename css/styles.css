@@ -51,6 +51,19 @@ nav a {
   nav a:first-of-type {
     border-left: none; }
 
+.vimeoMovieContainer {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 99vw;
+  grid-template-rows: 57.5581395349vw;
+  justify-items: center;
+  align-items: start; }
+  .vimeoMovieContainer .vimeoMovie {
+    margin-top: 80px;
+    width: 80vw;
+    height: 46.511627907vw; }
+
 .cover {
   height: auto;
   box-sizing: border-box;
@@ -93,28 +106,29 @@ nav a {
 .videoList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 350px 350px 350px; }
-  .videoList .miniVideoConatiner {
+  grid-template-rows: auto auto auto; }
+  .videoList .miniVideoConatainer {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    align-items: stretch;
     position: relative;
     display: flex;
     justify-content: center; }
-    .videoList .miniVideoConatiner .miniVideo {
+    .videoList .miniVideoConatainer .miniVideo {
       width: 100%;
       height: 100%;
       z-index: 1; }
-      .videoList .miniVideoConatiner .miniVideo:hover {
+      .videoList .miniVideoConatainer .miniVideo:hover {
         -moz-transform: scale(1.1);
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
         opacity: 0.5; }
-    .videoList .miniVideoConatiner .mask {
+    .videoList .miniVideoConatainer .mask {
       top: 40%;
       left: 45%;
       position: absolute; }
-      .videoList .miniVideoConatiner .mask img {
+      .videoList .miniVideoConatainer .mask img {
         width: 50%; }
 
 .clients {
@@ -204,14 +218,14 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: pink; }
 
-@media only screen and (max-device-width: 900px) {
+@media only screen and (max-width: 900px) {
   .bigNav {
     display: none; }
 
   .videoList {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 200px 200px 200px 200px 200px 200px 200px 200px 200px; } }
+    grid-template-rows: auto auto auto auto auto auto auto auto auto; } }
 .timeline {
   position: relative;
   overflow: auto; }

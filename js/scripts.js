@@ -1,17 +1,16 @@
 var navSize=90;
 
-var miniVideoContainer= document.getElementById("content");
 
-// var vimeoEmebed=["249434988","248575397","233169986","233168772","233168159","233167640","233166754","233165733","233164515"];
+var vimeoEmebed=["249434988","248575397","233169986","233168772","233168159","233167640","233166754","233165733","233164515"];
 
 // var hotel ='233170709';
 
-// function vimeoMovie(embed){
-// 	return "<iframe class=\"miniVideo\" src=\"https://player.vimeo.com/video/"+embed+"?title=0&byline=0&portrait=0\"  frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>"
-// }
+function vimeoMovie(embed){
+	return "<div class=\"vimeoMovieContainer\"><iframe class=\"vimeoMovie\" src=\"https://player.vimeo.com/video/"+embed+"?title=0&byline=0&portrait=0\"  frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>"
+}
 
 function videoImg(src){
-	return "<div class=\"miniVideoConatiner\"> <img class=\"miniVideo\"  src=\"./img/mini/"+src+".jpg\" alt=\"sample video\"/><div class=\"mask\"><img class=\"playButton\" src=\"./img/play.png\" alt=\"play\"></div></div>"
+	return "<div class=\"miniVideoConatainer\" data-id="+src+"> <img class=\"miniVideo\"  src=\"./img/mini/"+src+".jpg\" alt=\"sample video\"/><div class=\"mask\"><img class=\"playButton\" src=\"./img/play.png\" alt=\"play\"></div></div>"
 }
 
 document.onload = loadVideos();
@@ -20,7 +19,7 @@ document.onload = loadVideos();
 function loadVideos(){
 for(var i = 1 ; i< 10; i++) {
 	var video = videoImg(i);
-	miniVideoContainer.innerHTML +=  video;
+document.getElementById("content").innerHTML +=  video;
 }
 }
 
@@ -74,6 +73,18 @@ $('#content').html(returnContact());
 $('.logo').click(function(){
  positionabout = $('#cover').offset().top - navSize; // Position of #about - nav height = correct position
  $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
+})
+
+
+
+$(document).on('click', '.miniVideoConatainer', function(){
+ positionabout = $('#cover').offset().top - navSize; // Position of #about - nav height = correct position
+ $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
+  // $('#cover').removeClass();
+    $('#cover').html("");
+  $('#cover').html(vimeoMovie(vimeoEmebed[$(this).attr("data-id")]));
+ // $('#content').addClass("videoList");
+
 })
 
 

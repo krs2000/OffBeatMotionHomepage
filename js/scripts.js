@@ -6,7 +6,7 @@ var vimeoEmebed=["249434988","248575397","233169986","233168772","233168159","23
 // var hotel ='233170709';
 
 function vimeoMovie(embed){
-	return "<div class=\"vimeoMovieContainer\"><iframe class=\"vimeoMovie\" src=\"https://player.vimeo.com/video/"+embed+"?title=0&byline=0&portrait=0\"  frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>"
+	return "<div class=\"vimeoMovieContainer fadeIn\"><iframe class=\"vimeoMovie\" src=\"https://player.vimeo.com/video/"+embed+"?title=0&byline=0&portrait=0\"  frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>"
 }
 
 function videoImg(src){
@@ -32,7 +32,7 @@ $('.videosLink').click(function(){
  $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
   $('#content').removeClass();
   $('#content').html("");
- $('#content').addClass("videoList");
+ $('#content').addClass("videoList fadeIn");
  loadVideos();
 })
 
@@ -44,6 +44,7 @@ $('.scrollDown').click(function(){
 $('.aboutLink').click(function(){
  positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
  $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
+  $('#cover').html(returnMainVideo());
  $('#content').removeClass()
 $('#content').html("");
  $('#content').addClass("about");
@@ -53,6 +54,7 @@ $('#content').html(returnTimeline());
 $('.clientsLink').click(function(){
  positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
  $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
+  $('#cover').html(returnMainVideo());
  $('#content').removeClass();
  $('#content').html("");
  $('#content').addClass("clients");
@@ -62,15 +64,18 @@ $('#content').html(returnClients());
 $('.contactLink').click(function(){
  positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
  $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
+  $('#cover').html(returnMainVideo());
  $('#content').removeClass();
  $('#content').html("");
- $('#content').addClass("contact");
+ $('#content').addClass("contact fadeIn");
 $('#content').html(returnContact());
 })
 
 
 
 $('.logo').click(function(){
+ $('#cover').html(returnMainVideo());
+
  positionabout = $('#cover').offset().top - navSize; // Position of #about - nav height = correct position
  $("html, body").animate({scrollTop:positionabout}, '500', 'swing');
 })
@@ -114,7 +119,7 @@ function returnClients(){
 return(
 
 
-        "<div class=\"clientsContainer\">"+
+        "<div class=\"clientsContainer fadeIn\">"+
             "<img class=\"clientImg\" src=\"./img/Clients/1.png\" alt=\"\">"+
             "<img class=\"clientImg\" src=\"./img/Clients/2.png\" alt=\"\">"+
             "<img class=\"clientImg\" src=\"./img/Clients/3.png\" alt=\"\">"+
@@ -140,7 +145,7 @@ return(
                " <input type=\"email\" class=\"emailData\" name=\"_replyto\" placeholder=\"Email\">"+
               "  <input type=\"submit\" value=\"Send\">"+
            " </form>"+
-       " </div> "
+       " </div>  "
 )
     }
 
@@ -148,7 +153,7 @@ return(
 
  function returnTimeline(){
  	return(
-  "<div class=\"timeline\">"+
+  "<div class=\"timeline fadeIn\">"+
     "<ul>"+
      " <li>"+
         "<h3>Make Script</h3>"+
@@ -176,4 +181,18 @@ return(
   "</div>"
  		
  		)
+ }
+
+
+ function returnMainVideo(){
+return(
+  "<div class=\"mainVideoCotainer fadeIn\">"+
+    "<video autoplay loop class=\"mainVideo\">"+
+    "<source src=\"./img/cover.mp4\" type=\"video/mp4\">"+
+    "</video>"+
+    "</div>"+
+           "<img  src=\"./img/logo.png\" alt=\"logo\">"+
+        "<a class=\"scrollDown pulse\" href=\"#content\"></a>"
+  
+  )
  }

@@ -119,9 +119,9 @@ nav {
 			top: 35px;
 			position: absolute;
 			left: 50%;
-			border-top: 10px solid white;
-			border-left: 10px solid transparent;
-			border-right: 10px solid transparent;
+			border-top: 20px solid white;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
 			margin-left: -9px;
 		}
 	}
@@ -278,7 +278,7 @@ input[type="submit"]:hover {
 }
 
 ////////////////////////////////////////////////////
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 900px)  {
 	.bigNav {
 		display: none;
 	
@@ -352,7 +352,84 @@ input[type="submit"]:hover {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media only screen and (max-device-width: 900px){
+
+	
+	.bigNav {
+		display: none;
+	
+}
+
+	.videoList {
+		display: grid;
+		grid-template-columns: 1fr ;
+		grid-template-rows: auto auto auto  auto  auto  auto  auto  auto  auto    ;
+	}
+}
+
+
+.timeline {
+  position: relative;
+  overflow: auto;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: white;
+    left: 0;
+  }
+  
+  h2 {
+    background: gray;
+    max-width: 6em;
+    margin: 0 auto 1em;
+    padding: 0.5em;
+    text-align: center;
+    position: relative;
+    clear: both;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0 0 0 1em;
+    z-index: 1;
+  }
+  
+  li {
+    background: white;
+    opacity: 0.9;
+    padding: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    border-radius: 4px;
+
+&:before {
+      content: '';
+      width: 0;
+      height: 0;
+       border-bottom: 1em solid transparent;
+      border-top: 1em solid transparent;
+      border-left: 1em solid transparent;
+     border-right: 1em solid white;
+      position: absolute;
+      left: -2em;
+      top: 4em;
+    }
+  }
+  
+  h3 {
+    margin-top: 0;
+  }
+  
+  time {
+    font-style: italic;
+  }
+}
+
+
+@media screen and (min-width: 900px)  {
   .container {
     max-width: 1000px;
     margin: 0 auto;

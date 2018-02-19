@@ -97,9 +97,9 @@ nav a {
       top: 35px;
       position: absolute;
       left: 50%;
-      border-top: 10px solid white;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
+      border-top: 20px solid white;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
       margin-left: -9px; }
 
 .videoList {
@@ -218,6 +218,59 @@ input[type="submit"]:hover {
   background-color: pink; }
 
 @media only screen and (max-width: 900px) {
+  .bigNav {
+    display: none; }
+
+  .videoList {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto; } }
+.timeline {
+  position: relative;
+  overflow: auto; }
+  .timeline:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: white;
+    left: 0; }
+  .timeline h2 {
+    background: gray;
+    max-width: 6em;
+    margin: 0 auto 1em;
+    padding: 0.5em;
+    text-align: center;
+    position: relative;
+    clear: both; }
+  .timeline ul {
+    list-style: none;
+    padding: 0 0 0 1em;
+    z-index: 1; }
+  .timeline li {
+    background: white;
+    opacity: 0.9;
+    padding: 1em;
+    margin-bottom: 1em;
+    position: relative;
+    border-radius: 4px; }
+    .timeline li:before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-bottom: 1em solid transparent;
+      border-top: 1em solid transparent;
+      border-left: 1em solid transparent;
+      border-right: 1em solid white;
+      position: absolute;
+      left: -2em;
+      top: 4em; }
+  .timeline h3 {
+    margin-top: 0; }
+  .timeline time {
+    font-style: italic; }
+
+@media only screen and (max-device-width: 900px) {
   .bigNav {
     display: none; }
 

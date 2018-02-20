@@ -38,7 +38,8 @@ $('.videosLink').click(function() {
     $('#content').html("");
     $('#content').addClass("videoList fadeIn");
     loadVideos();
-      $('#burger').prop("checked", false);
+    var burger =  $('#burger');
+     burger.prop("checked", false);
 })
 
 $('.scrollDown').click(function() {
@@ -54,7 +55,8 @@ $('.aboutLink').click(function() {
     $('#content').html("");
     $('#content').addClass("about");
     $('#content').html(returnTimeline());
-      $('#burger').prop("checked", false);
+    var burger =  $('#burger');
+     burger.prop("checked", false);
 })
 
 $('.clientsLink').click(function() {
@@ -65,7 +67,8 @@ $('.clientsLink').click(function() {
     $('#content').html("");
     $('#content').addClass("clients");
     $('#content').html(returnClients());
-      $('#burger').prop("checked", false);
+  var burger =  $('#burger');
+     burger.prop("checked", false);
 })
 
 $('.contactLink').click(function() {
@@ -76,7 +79,8 @@ $('.contactLink').click(function() {
     $('#content').html("");
     $('#content').addClass("contact fadeIn");
     $('#content').html(returnContact());
-    $('#burger').prop("checked", false);
+    var burger =  $('#burger');
+     burger.prop("checked", false);
 })
 
 

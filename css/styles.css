@@ -72,10 +72,10 @@ nav a {
   display: flex;
   justify-content: center; }
   .cover .mainVideoCotainer {
-    width: 100%;
+    width: 120%;
     height: auto; }
     .cover .mainVideoCotainer .mainVideo {
-      height: 100vh;
+      height: 120vh;
       width: auto; }
   .cover img {
     width: 30%;
@@ -219,9 +219,6 @@ input[type="submit"]:hover {
   background-color: pink; }
 
 @media only screen and (max-width: 900px) {
-  .bigNav {
-    display: none; }
-
   .videoList {
     display: grid;
     grid-template-columns: 1fr;

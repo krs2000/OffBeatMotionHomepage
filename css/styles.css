@@ -111,7 +111,8 @@ h2 {
     .videoList .miniVideoConatainer .miniVideo {
       width: 100%;
       height: 100%;
-      z-index: 1; }
+      z-index: 1;
+      cursor: pointer; }
       .videoList .miniVideoConatainer .miniVideo:hover {
         -moz-transform: scale(1.1);
         -webkit-transform: scale(1.1);
@@ -157,7 +158,8 @@ footer {
   align-items: center;
   justify-content: center;
   height: 100px;
-  background-color: black; }
+  background-color: black;
+  cursor: pointer; }
   footer img {
     opacity: 0.9;
     width: 40px;

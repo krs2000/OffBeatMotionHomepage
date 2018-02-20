@@ -319,7 +319,10 @@ input[type="submit"]:hover {
     display: none; }
 
   .mobileNav {
-    display: block; } }
+    display: block; }
+
+  .navigationBar {
+    justify-content: center; } }
 @media only screen and (max-device-width: 900px) {
   .videoList {
     display: grid;
@@ -334,7 +337,10 @@ input[type="submit"]:hover {
     display: none; }
 
   .mobileNav {
-    display: block; } }
+    display: block; }
+
+  .navigationBar {
+    justify-content: center; } }
 @media screen and (min-width: 900px) {
   .container {
     max-width: 1000px;

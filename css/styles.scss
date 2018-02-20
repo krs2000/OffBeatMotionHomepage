@@ -414,7 +414,10 @@ input[type="submit"]:hover {
 
 .navigationBar {
 	justify-content: center;
+		padding:20px 0;
 }
+
+
 
 
 }
@@ -444,6 +447,23 @@ input[type="submit"]:hover {
 
 .navigationBar {
 	justify-content: center;
+	padding:20px 0;
+}
+
+footer {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height: 100px;
+	background-color: black;
+	img{
+		opacity:0.9;
+		width:60px;
+		margin: 50px 40px;
+		&:hover{
+			opacity:1;
+		}
+	}
 }
 
 }
@@ -501,7 +521,7 @@ input[type="submit"]:hover {
 
 
 nav {
- 
+
     input + label {
       position: fixed;
       top: 40px;
@@ -573,6 +593,7 @@ nav {
             text-transform: uppercase;
             color: white;
             font-weight: 700;
+            font-size:30px;
             font-family: sans-serif;
             display: block;
             padding: 30px;

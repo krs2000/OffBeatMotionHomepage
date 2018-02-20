@@ -322,7 +322,8 @@ input[type="submit"]:hover {
     display: block; }
 
   .navigationBar {
-    justify-content: center; } }
+    justify-content: center;
+    padding: 20px 0; } }
 @media only screen and (max-device-width: 900px) {
   .videoList {
     display: grid;
@@ -340,7 +341,21 @@ input[type="submit"]:hover {
     display: block; }
 
   .navigationBar {
-    justify-content: center; } }
+    justify-content: center;
+    padding: 20px 0; }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: black; }
+    footer img {
+      opacity: 0.9;
+      width: 60px;
+      margin: 50px 40px; }
+      footer img:hover {
+        opacity: 1; } }
 @media screen and (min-width: 900px) {
   .container {
     max-width: 1000px;
@@ -427,6 +442,7 @@ nav input ~ div {
         text-transform: uppercase;
         color: white;
         font-weight: 700;
+        font-size: 30px;
         font-family: sans-serif;
         display: block;
         padding: 30px;

@@ -14,15 +14,15 @@ function videoImg(src){
 }
 
 document.onload = loadVideos();
+$('.mainVideo').onload= function(){$('.mainVideo').play()}
 
 
 function loadVideos(){
 for(var i = 1 ; i< 10; i++) {
-	var video = videoImg(i);
+  var video = videoImg(i);
 document.getElementById("content").innerHTML +=  video;
 }
 }
-
 
 
 

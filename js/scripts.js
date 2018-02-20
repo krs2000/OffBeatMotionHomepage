@@ -34,9 +34,11 @@ $('.videosLink').click(function() {
     positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
     $('#content').removeClass();
+      $('#cover').html(returnMainVideo());
     $('#content').html("");
     $('#content').addClass("videoList fadeIn");
     loadVideos();
+      $('#burger').prop("checked", false);
 })
 
 $('.scrollDown').click(function() {
@@ -48,27 +50,33 @@ $('.aboutLink').click(function() {
     positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
     $('#content').removeClass()
+       $('#cover').html("");
     $('#content').html("");
     $('#content').addClass("about");
     $('#content').html(returnTimeline());
+      $('#burger').prop("checked", false);
 })
 
 $('.clientsLink').click(function() {
     positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
     $('#content').removeClass();
+     $('#cover').html("");
     $('#content').html("");
     $('#content').addClass("clients");
     $('#content').html(returnClients());
+      $('#burger').prop("checked", false);
 })
 
 $('.contactLink').click(function() {
     positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
     $('#content').removeClass();
+     $('#cover').html("");
     $('#content').html("");
     $('#content').addClass("contact fadeIn");
     $('#content').html(returnContact());
+    $('#burger').prop("checked", false);
 })
 
 
@@ -189,7 +197,7 @@ function returnTimeline() {
 function returnMainVideo() {
     return (
         "<div class=\"mainVideoCotainer fadeIn\">" +
-        "<video autoplay muted playsinline loop lass=\"mainVideo\">" +
+        "<video autoplay muted playsinline loop class=\"mainVideo\">" +
         "<source src=\"./img/cover.mp4\" type=\"video/mp4\">" +
         "</video>" +
         "</div>" +
@@ -198,6 +206,15 @@ function returnMainVideo() {
 
     )
 }
+
+
+ // <div class="mainVideoCotainer">
+ //            <video autoplay muted playsinline loop class="mainVideo">
+ //                <source src="./img/cover.mp4" type="video/mp4">
+ //            </video>
+ //        </div>
+ //        <img src="./img/logo.png" alt="logo">
+ //        <a class="scrollDown pulse" href="#content"></a>
 
 
 // Get the modal
@@ -217,11 +234,13 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
+  // $('.modal-content').html("");
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        modal.style.display = "none";  
+  // $('.modal-content').html("");
     }
 }

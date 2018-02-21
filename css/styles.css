@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  font-family: "Arial";
+  font-family: "Open Sans", sans-serif;
+  font-weight: 1;
   overflow: hidden;
   background-color: black; }
 
@@ -29,6 +30,7 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   padding: 20px 20px 20px 0;
   position: fixed;
   text-align: right;
@@ -52,9 +54,12 @@ h2 {
   text-decoration: none;
   text-transform: uppercase;
   border-left: 1px solid white;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: all .1s ease-in-out; }
   .bigNav a:first-of-type {
     border-left: none; }
+  .bigNav a:hover {
+    transform: scale(1.01); }
 
 .cover {
   height: auto;
@@ -71,30 +76,13 @@ h2 {
       height: 120vh;
       width: auto; }
   .cover img {
-    width: 30%;
     height: auto;
-    display: inline-block;
     position: absolute;
-    justify-self: center;
-    top: 40%; }
-  .cover a {
-    top: 70%;
-    color: white;
-    position: absolute;
-    font-size: 20px;
-    box-sizing: border-box;
-    width: 100%;
+    opacity: 0.7;
+    top: 60%;
     text-align: center;
-    text-decoration: none; }
-    .cover a:before {
-      content: "";
-      top: 35px;
-      position: absolute;
-      left: 50%;
-      border-top: 20px solid white;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      margin-left: -9px; }
+    cursor: pointer;
+    width: 3%; }
 
 .videoList {
   display: grid;
@@ -112,7 +100,8 @@ h2 {
       width: 100%;
       height: 100%;
       z-index: 1;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: all .5s ease-in-out; }
       .videoList .miniVideoConatainer .miniVideo:hover {
         -moz-transform: scale(1.1);
         -webkit-transform: scale(1.1);
@@ -163,9 +152,11 @@ footer {
   footer img {
     opacity: 0.9;
     width: 40px;
-    margin: 0 30px; }
+    margin: 0 30px;
+    transition: all .2s ease-in-out; }
     footer img:hover {
-      opacity: 1; }
+      opacity: 1;
+      transform: scale(1.15); }
 
 .emailForm {
   display: flex;
@@ -212,53 +203,6 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: pink; }
-
-.timeline {
-  position: relative;
-  overflow: auto; }
-  .timeline:before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 2px;
-    background: white;
-    left: 0; }
-  .timeline h2 {
-    background: gray;
-    max-width: 6em;
-    margin: 0 auto 1em;
-    padding: 0.5em;
-    text-align: center;
-    position: relative;
-    clear: both; }
-  .timeline ul {
-    list-style: none;
-    padding: 0 0 0 1em;
-    z-index: 1; }
-  .timeline li {
-    background: white;
-    opacity: 0.9;
-    padding: 1em;
-    margin-bottom: 1em;
-    position: relative;
-    border-radius: 4px; }
-    .timeline li:before {
-      content: '';
-      width: 0;
-      height: 0;
-      border-bottom: 1em solid transparent;
-      border-top: 1em solid transparent;
-      border-left: 1em solid transparent;
-      border-right: 1em solid white;
-      position: absolute;
-      left: -2em;
-      top: 4em; }
-  .timeline h3 {
-    margin-top: 0; }
-  .timeline time {
-    font-style: italic; }
-  .timeline .modal-content {
-    margin: 25% auto; }
 
 .modal {
   display: none;
@@ -325,7 +269,10 @@ input[type="submit"]:hover {
 
   .navigationBar {
     justify-content: center;
-    padding: 20px 0; } }
+    padding: 20px 0; }
+
+  .cover img {
+    width: 7%; } }
 @media only screen and (max-device-width: 900px) {
   .videoList {
     display: grid;
@@ -357,7 +304,10 @@ input[type="submit"]:hover {
       width: 60px;
       margin: 50px 40px; }
       footer img:hover {
-        opacity: 1; } }
+        opacity: 1; }
+
+  .cover img {
+    width: 7%; } }
 @media screen and (min-width: 900px) {
   .container {
     max-width: 1000px;
@@ -401,7 +351,8 @@ nav input + label {
     left: 0;
     display: block;
     background: white;
-    transition: .5s; }
+    transition: .5s;
+    opacity: 0.2; }
   nav input + label span:first-child {
     top: -11px; }
   nav input + label span:last-child {
@@ -443,9 +394,9 @@ nav input ~ div {
         text-decoration: none;
         text-transform: uppercase;
         color: white;
-        font-weight: 700;
+        font-weight: 300;
         font-size: 30px;
-        font-family: sans-serif;
+        font-family: "Open Sans";
         display: block;
         padding: 30px;
         cursor: pointer; }

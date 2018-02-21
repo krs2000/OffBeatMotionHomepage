@@ -42,7 +42,8 @@ $('.videosLink').click(function() {
      burger.prop("checked", false);
 })
 
-$('.scrollDown').click(function() {
+
+$(document).on('click', '.arrow', function() {
     positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
 })
@@ -168,30 +169,7 @@ function returnContact() {
 function returnTimeline() {
     return (
         "<div class=\"timeline fadeIn\">" +
-        "<ul>" +
-        " <li>" +
-        "<h3>Make Script</h3>" +
-        " <p>One day, my boss came up to me and asked, Pretty much decided I wasn't ready.</p>" +
-        "</li>" +
-        "<li>" +
-        "<h3>Film</h3>" +
-        " <p>Began work at the Button Factory. This was probably the best time of my life. I had a wife, a dog, and a family.</p>" +
-        "</li>" +
-        "<li>" +
-        "<h3>Editing</h3>" +
-        "<p>I was just sick of Josh</p>" +
-        "</li>" +
-        "<li>" +
-        " <h3>Consulting Result</h3>" +
-        " <p>I moved to and settled down into my new life.</p>" +
-        " </li>" +
-        "</ul>" +
-        "<ul>" +
-        "<li>" +
-        "<h3>Deliver</h3>" +
-        "<p>It only took, like, two years.</p>" +
-        "</li>" +
-        " </ul>" +
+        
         "</div>"
 
     )
@@ -205,8 +183,8 @@ function returnMainVideo() {
         "<source src=\"./img/cover.mp4\" type=\"video/mp4\">" +
         "</video>" +
         "</div>" +
-        "<img  src=\"./img/logo.png\" alt=\"logo\">" +
-        "<a class=\"scrollDown pulse\" href=\"#content\"></a>"
+        " <img src=\"./img/arrow.png\" class=\"floater arrow\" alt=\"arrow\"> " 
+  
 
     )
 }

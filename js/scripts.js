@@ -1,4 +1,4 @@
-var navSize = 90;
+var navOffset = 88;
 
 
 var vimeoEmebed = ["249434988", "248575397", "233169986", "233168772", "233168159", "233167640", "233166754", "233165733", "233164515"];
@@ -29,9 +29,28 @@ function loadVideos() {
 
 
 
+// Get the modal
+var modal = document.getElementById('myModal');
+
+var span = document.getElementsByClassName("close")[0];
+
+
+span.onclick = function() {
+    modal.style.display = "none";
+  $('.modal-content').html("");
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";  
+  $('.modal-content').html("");
+    }
+}
+
 
 $('.videosLink').click(function() {
-    positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
+    positionabout = $('#content').offset().top - navOffset; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
     $('#content').removeClass();
       $('#cover').html(returnMainVideo());
@@ -44,12 +63,12 @@ $('.videosLink').click(function() {
 
 
 $(document).on('click', '.arrow', function() {
-    positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
+    positionabout = $('#content').offset().top - navOffset; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
 })
 
 $('.aboutLink').click(function() {
-    positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
+    positionabout = $('#cover').offset().top - navOffset; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
     $('#content').removeClass()
        $('#cover').html("");
@@ -61,7 +80,7 @@ $('.aboutLink').click(function() {
 })
 
 $('.clientsLink').click(function() {
-    positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
+    positionabout = $('#cover').offset().top - navOffset; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
     $('#content').removeClass();
      $('#cover').html("");
@@ -73,13 +92,13 @@ $('.clientsLink').click(function() {
 })
 
 $('.contactLink').click(function() {
-    positionabout = $('#content').offset().top - navSize; // Position of #about - nav height = correct position
-    $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
-    $('#content').removeClass();
+    positionabout = $('#cover').offset().top ; // Position of #about - nav height = correct position
      $('#cover').html("");
     $('#content').html("");
+    $('#content').removeClass();
     $('#content').addClass("contact fadeIn");
     $('#content').html(returnContact());
+    $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
     var burger =  $('#burger');
      burger.prop("checked", false);
 })
@@ -88,23 +107,16 @@ $('.contactLink').click(function() {
 
 $('.logo').click(function() {
 
-    positionabout = $('#cover').offset().top - navSize; // Position of #about - nav height = correct position
+    positionabout = $('#cover').offset().top - navOffset; // Position of #about - nav height = correct position
     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
 })
 
 
 
 $(document).on('click', '.miniVideoConatainer', function() {
-    // positionabout = $('#cover').offset().top - navSize; 
-    // $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
-    // $('#cover').removeClass();
      modal.style.display = "block";
-
-
-  $('.modal-content').html("");
+   $('.modal-content').html("");
     $('.modal-content').html(vimeoMovie(vimeoEmebed[$(this).attr("data-id")]));
-    // $('#content').addClass("videoList");
-
 })
 
 
@@ -115,24 +127,12 @@ $(window).load(function() {
 })
 
 
-// $(".miniVideoConatiner").hover(
-//      function(){
-//     $(this).children(".mask").children("img").css("display","block");
-// });
-
-// $(".miniVideoConatiner").mouseout(
-//   function(){
-//     $(this).children(".mask").children("img").css("display", "none");
-// }
-//  )
-
 
 
 
 
 function returnClients() {
     return (
-
 
         "<div class=\"clientsContainer fadeIn\">" +
         "<img class=\"clientImg\" src=\"./img/Clients/1.png\" alt=\"\">" +
@@ -142,16 +142,12 @@ function returnClients() {
         "<img class=\"clientImg\" src=\"./img/Clients/5.png\" alt=\"\">" +
         "</div>" +
         "</section>"
-
-
-
-
     )
 }
 
 function returnContact() {
     return (
-        "<h2>Get in toutch with us .</h2>" +
+        "<div class=\"contactContainer\"><h2>Get in toutch with us .</h2>" +
         "<div class=\"emailForm\">" +
         " <form class=\"formData\" action=\"https://formspree.io/krskrysiak@gmail.com\" method=\"POST\">" +
         "<input type=\"text\" name=\"name\" placeholder=\"Name\">" +
@@ -160,7 +156,7 @@ function returnContact() {
         " <input type=\"email\" class=\"emailData\" name=\"_replyto\" placeholder=\"Email\">" +
         "  <input type=\"submit\" value=\"Send\">" +
         " </form>" +
-        " </div>  "
+        " </div></div>  "
     )
 }
 
@@ -168,10 +164,8 @@ function returnContact() {
 
 function returnTimeline() {
     return (
-        "<div class=\"timeline fadeIn\">" +
-        
+        "<div class=\"timeline fadeIn\">" +       
         "</div>"
-
     )
 }
 
@@ -184,45 +178,8 @@ function returnMainVideo() {
         "</video>" +
         "</div>" +
         " <img src=\"./img/arrow.png\" class=\"floater arrow\" alt=\"arrow\"> " 
-  
-
     )
 }
 
 
- // <div class="mainVideoCotainer">
- //            <video autoplay muted playsinline loop class="mainVideo">
- //                <source src="./img/cover.mp4" type="video/mp4">
- //            </video>
- //        </div>
- //        <img src="./img/logo.png" alt="logo">
- //        <a class="scrollDown pulse" href="#content"></a>
-
-
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal 
-// btn.onclick = function() {
-//     modal.style.display = "block";
-// }
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-  // $('.modal-content').html("");
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";  
-  // $('.modal-content').html("");
-    }
-}
+ 

@@ -85,7 +85,7 @@ h2 {
     height: auto;
     position: absolute;
     opacity: 0.7;
-    top: 70%;
+    top: 65%;
     text-align: center;
     cursor: pointer;
     width: 3%; }
@@ -168,24 +168,37 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-items: center; }
+  justify-content: center;
+  color: white; }
   .contactContainer h2 {
     margin: 10px; }
+  .contactContainer div {
+    margin-top: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    .contactContainer div img {
+      width: 3%;
+      margin: 0 1%; }
 
 .emailForm {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
 
 .formData {
-  width: 70%; }
+  width: 50%; }
 
 .textData {
   height: 300px; }
 
-input::placeholder {
-  color: #274060;
+textarea, input::placeholder {
+  color: black;
   font-size: 20px;
-  text-align: center; }
+  text-align: center;
+  opacity: 0.8; }
 
 input[type="text"],
 input[type="email"],
@@ -351,6 +364,9 @@ nav input:checked ~ div {
   .cover img {
     width: 7%; } }
 @media only screen and (max-device-width: 900px) {
+  h2 {
+    font-size: 40px; }
+
   .navigationBar .logo {
     height: 90px; }
 
@@ -422,6 +438,25 @@ nav input:checked ~ div {
         opacity: 1; }
 
   .cover img {
-    width: 7%; } }
+    width: 7%; }
+
+  .formData {
+    width: 80%; }
+
+  .contactContainer {
+    font-size: 30px; }
+
+  textarea, input::placeholder {
+    font-size: 28px; }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 28px; }
+
+  input[type="submit"] {
+    padding: 20px 28px;
+    font-size: 28px; } }
 
 /*# sourceMappingURL=styles.css.map */

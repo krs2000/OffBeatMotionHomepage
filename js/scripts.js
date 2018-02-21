@@ -61,6 +61,11 @@ $('.videosLink').click(function() {
      burger.prop("checked", false);
 })
 
+// $("#cover").scroll( function() {
+//     positionabout = $('#content').offset().top - navOffset; // Position of #about - nav height = correct position
+//     $("html, body").animate({ scrollTop: positionabout }, '500', 'swing');
+// })
+
 
 $(document).on('click', '.arrow', function() {
     positionabout = $('#content').offset().top - navOffset; // Position of #about - nav height = correct position
@@ -152,11 +157,13 @@ function returnContact() {
         " <form class=\"formData\" action=\"https://formspree.io/krskrysiak@gmail.com\" method=\"POST\">" +
         "<input type=\"text\" name=\"name\" placeholder=\"Name\">" +
         "<input type=\"text\" name=\"name\" placeholder=\"Topic\">" +
-        " <input type=\"text\" class=\"textData\" name=\"message\" placeholder=\"Your message\">" +
+        " <textarea  rows=\"14\" cols=\"10\" wrap=\"soft\" class=\"textData\" name=\"message\" placeholder=\"Your message\"/\/>" +
         " <input type=\"email\" class=\"emailData\" name=\"_replyto\" placeholder=\"Email\">" +
         "  <input type=\"submit\" value=\"Send\">" +
         " </form>" +
-        " </div></div>  "
+        " </div>"+
+        "<div ><img src=\"./img/email.png\" alt=\"email icon\">contact@offbeat.com<img src=\"./img/phone.png\" alt=\"email icon\">798789798</div>"+
+        "</div>  "
     )
 }
 

@@ -1,4 +1,4 @@
-var navOffset = 88;
+var navOffset = 73;
 
 
 var vimeoEmebed = ["249434988", "248575397", "233169986", "233168772", "233168159", "233167640", "233166754", "233165733", "233164515"];
@@ -13,7 +13,7 @@ function videoImg(src) {
     return "<div class=\"miniVideoConatainer\" data-id=" + src + "> <img class=\"miniVideo\"  src=\"./img/mini/" + src + ".jpg\" alt=\"sample video\"/><div class=\"mask\"><img class=\"playButton\" src=\"./img/play.png\" alt=\"play\"></div></div>"
 }
 
-document.onload = loadVideos();
+// document.onload = loadVideos();
 var mainVideo = $('.mainVideo');
 mainVideo.onload = function(){
  mainVideo.play();
@@ -140,12 +140,13 @@ function returnClients() {
     return (
 
         "<div class=\"clientsContainer fadeIn\">" +
-        "<img class=\"clientImg\" src=\"./img/Clients/1.png\" alt=\"\">" +
+        "<div><h2>Clients.</h2></div>"+
+        "<div><img class=\"clientImg\" src=\"./img/Clients/1.png\" alt=\"\">" +
         "<img class=\"clientImg\" src=\"./img/Clients/2.png\" alt=\"\">" +
         "<img class=\"clientImg\" src=\"./img/Clients/3.png\" alt=\"\">" +
         "<img class=\"clientImg\" src=\"./img/Clients/4.png\" alt=\"\">" +
         "<img class=\"clientImg\" src=\"./img/Clients/5.png\" alt=\"\">" +
-        "</div>" +
+        "</div></div>" +
         "</section>"
     )
 }

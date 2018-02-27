@@ -643,15 +643,58 @@ input[type="submit"] {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .news-item {
   display: inline-block;
   min-height: 400px;
-  width: 50%;
+  width: 100%;
+ overflow: hidden;
+         position: relative;
+   transition: all .5s ease-in-out;
+                &:hover {
+                    // -moz-transform: scale(1.1);
+                    // -webkit-transform: scale(1.1);
+                    // transform: scale(1.05);
+                    opacity: 0.8;
+                 
+                }
+          .description{
+          	top:25%;
+         	left:35%;
+          	position:absolute;
+          	z-index:7;
+          	font-size: 50px;
+          	display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			color:white;
+			display: none;
+			  text-transform: uppercase;
+			  padding:0;
+			    :nth-child(1){
+			  	margin:0 ;
+			  
+			  }
+			  :nth-child(2){
+			  	margin-top:0;
+			  	 	font-size: 30px;
+			  }
+          }
+            // }
+            // .mask {
+            //     top: 40%;
+            //     left: 45%;
+            //     position: absolute;
+            //     img {
+            //         width: 50%;
+            //     }
 }
 
 .hero-item {
+
   background-image: url('../img/mini/b.jpg');
 }
 
@@ -664,6 +707,14 @@ input[type="submit"] {
 }
 
 .standard-item:nth-child(4) {
+  background-image: url("../img/mini/5.jpg");
+}
+
+.standard-item:nth-child(5) {
+  background-image: url("../img/mini/9.jpg");
+}
+
+.standard-item:nth-child(6) {
   background-image: url("../img/mini/c.jpg");
 }
 
@@ -671,6 +722,8 @@ input[type="submit"] {
   .news-item {
     width: auto;
     min-height: 0;
+
+
   }
   
   .hero-item {
@@ -700,9 +753,25 @@ input[type="submit"] {
 
   .standard-item:nth-child(4) {
     grid-column: 1 / span 2;
-    grid-row: 100 / 150;
+    grid-row: 100 / 130;
     -webkit-clip-path: polygon(45% 0, 100% 15%, 100% 100%, 0 100%, 0 5%);
-    clip-path: polygon(45% 0, 100% 15%, 100% 100%, 0 100%, 0 5%);
+    clip-path: polygon(45% 0, 100% 23%, 100% 100%, 0 100%, 0 7%);
     margin-top: -107px;
   }
+
+    .standard-item:nth-child(5) {
+    grid-column: 2 / span 1;
+    grid-row: 130 / 180;
+    -webkit-clip-path: polygon(30% 0%, 0% 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(48% 0%, 4% 100%, 100% 100%, 100% 0%);
+    margin-left:-0.5%;
+ 
+  }
+
+  .standard-item:nth-child(6) {
+    grid-column: 1 /span 2;
+    grid-row: 130 / 180;
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 45% 100%, 70% 0%);
+    clip-path: polygon(0% 0%, 0% 100%, 51% 100%, 73% 0%);
+}
 }

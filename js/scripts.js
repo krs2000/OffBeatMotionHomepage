@@ -133,7 +133,9 @@ $(window).load(function() {
 
 
 
-
+$(document).on('hover', '.news-item', function() {
+   $(".description").css({"display":"block"});
+})
 
 
 function returnClients() {

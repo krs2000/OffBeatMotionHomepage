@@ -632,7 +632,7 @@ input[type="submit"] {
   grid-gap: 10px;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 1fr;
-  max-width: 100%;
+  max-width: 98vw;
   font-size: 0;
   margin:10px auto;
 
@@ -652,14 +652,14 @@ input[type="submit"] {
   display: inline-block;
   min-height: 400px;
   width: 100%;
- overflow: hidden;
+  filter: grayscale(60%);
          position: relative;
    transition: all .5s ease-in-out;
                 &:hover {
                     // -moz-transform: scale(1.1);
                     // -webkit-transform: scale(1.1);
                     // transform: scale(1.05);
-                    opacity: 0.8;
+                    filter: grayscale(0%);
                  
                 }
           .description{
@@ -696,12 +696,13 @@ input[type="submit"] {
 }
 
 .hero-item {
-
   background-image: url('../img/mini/b.jpg');
+
 }
 
 .standard-item:nth-child(2) {
   background-image: url("../img/mini/a.jpg");
+  
 }
 
 .standard-item:nth-child(3) {
@@ -777,3 +778,5 @@ input[type="submit"] {
     clip-path: polygon(0% 0%, 0% 100%, 51% 100%, 73% 0%);
 }
 }
+
+

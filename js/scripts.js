@@ -127,6 +127,7 @@ $(document).on('click', '.miniVideoConatainer', function() {
 
 
 $(window).load(function() {
+     $("html, body").animate({ scrollTop: 0 }, '0', 'swing');
     $('#spinner').fadeOut(1000);
     $('html, body').css('overflowY', 'auto');
 })
